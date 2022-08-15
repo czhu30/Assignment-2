@@ -40,6 +40,9 @@ def percent_to_graph(percent, total_chars):
 def call_du_sub(location):
     "takes the target directory as an argument and returns a list of strings"
     "returned by the command `du -d 1 location`"
+    alist = subprocess.run(["du", "-d","1",  location], capture_output=True)
+    return alist
+    
     pass
 
 def create_dir_dict(alist):
